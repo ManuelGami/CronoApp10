@@ -24,6 +24,13 @@ import com.mexiti.cronoapp.R
 
 /* This file contain components of App that show important information. */
 
+@Composable
+fun formatTiempo(time:Long):String{
+    val segundos = time % 60
+    val minutos = (time/60)%60
+    val horas = time/3600
+    return String.format("%02d:%02d:%02d",horas,minutos, segundos)
+}
 
 @Composable
 fun MainTitle(title: String){
@@ -64,7 +71,7 @@ fun CronCard(title: String,
             Text(text = title,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-                )
+            )
             Row {
                 Icon(painter = painterResource(id = R.drawable.icon_timer_24),
                     contentDescription = "",
@@ -102,19 +109,19 @@ fun MainTitlePreview(){
 
 
 
-    @Preview(showBackground = true)
-    @Composable
-    fun MainTextfieldPreview(){
+@Preview(showBackground = true)
+@Composable
+fun MainTextfieldPreview(){
 
-        MainTextField(value = "00:05:00", onValueChange ={} , label = "Score" )
+    MainTextField(value = "00:05:00", onValueChange ={} , label = "Score" )
 
-    }
+}
 
 
 @Preview(showBackground = true)
 @Composable
 fun CronCardPreview(){
     CronCard(title = "Cronos", crono = "01:24:00") {
-        
+
     }
 }

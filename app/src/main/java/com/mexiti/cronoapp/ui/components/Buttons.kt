@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -29,7 +28,7 @@ fun FloatButton(onClick: () -> Unit ){
         onClick = onClick,
         containerColor = MaterialTheme.colorScheme.primary,
         contentColor = Color.White
-        ) {
+    ) {
         Icon(imageVector = Icons.Default.Add, contentDescription = "Agregar")
 
     }
@@ -39,7 +38,7 @@ fun FloatButton(onClick: () -> Unit ){
 fun MainIconButton(icon:ImageVector, onClick: () -> Unit){
     IconButton(onClick = onClick) {
         Icon(imageVector = icon, contentDescription = null, tint = Color.White
-         )
+        )
 
     }
 }
@@ -57,7 +56,7 @@ fun CircleButton(
         enabled = enabled,
         modifier = Modifier.padding(horizontal = 15.dp)
 
-        ) {
+    ) {
         Icon(painter =  icon, contentDescription ="",
             modifier = Modifier.size(24.dp))
     }
@@ -68,8 +67,8 @@ fun CircleButton(
 @Preview(showBackground = true)
 @Composable
 fun FloatButtonPreview(){
-   FloatButton {
-   }
+    FloatButton {
+    }
 }
 
 
@@ -77,7 +76,7 @@ fun FloatButtonPreview(){
 @Composable
 fun MainIconButtonPreview(){
     MainIconButton(icon = Icons.Default.ArrowBack ) {
-        
+
     }
 }
 
@@ -85,6 +84,6 @@ fun MainIconButtonPreview(){
 @Composable
 fun CircleButtonPreview(){
     CircleButton(icon = painterResource(id = R.drawable.play_arrow_24)) {
-        
+
     }
 }
